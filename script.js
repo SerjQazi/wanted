@@ -1,5 +1,4 @@
 function startGame () {
-
     // an array of image paths to list the images from
     const imgBoard = [
         './images/luigi-board.png',
@@ -30,7 +29,6 @@ function startGame () {
         function setCrim() {
             const img = document.createElement('img');
             img.src = imgBoard[randomCrim];
-            console.log(imgBoard[randomCrim]);
             img.className = 'crim-image';
             crim.appendChild(img);
         }
@@ -104,7 +102,7 @@ function startGame () {
 
 
         hitbox.appendChild(img);
-    }
+    } // end of the for loop
     
     // set the crim image after the loop has completed
     setCrim();
@@ -133,6 +131,5 @@ function startGame () {
             hitbox.style.color = 'red';
         }
     }, 1000);
-}
-
-   
+    
+} // end of the startGame function
