@@ -22,13 +22,34 @@ body {
 
 .wanted {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: absolute;
   width: 100%;
   top: 154px;
 }
 
-.selectionArea {
+.button_container {
+  position: absolute;
+  bottom: -142px;
+}
+
+button{
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  color: White;
+  font-style: bold;
+  border: 5px solid green;
+  box-shadow: 0 0 10px limegreen;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  
+}
+
+.selection_area {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -38,14 +59,39 @@ body {
   top: 416px;
 }
 
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.perps {
+  display: flex;
+  justify-content: center;
+}
+
+.time {
+  color: red;
+  padding-left: 10px;
+  font-size: 1.6rem;
+}
+
+.perpImg {
+  padding: 0 10px;
+}
+
 .hitbox {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 4px;
   margin-top: 10px;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
 }
 
 .target-image {
@@ -57,13 +103,24 @@ body {
   transition: transform 0.3s ease;
 
   z-index: 100;
+
+  animation: swing 3s infinite ease-in-out;
 }
 
 .target-image:hover {
   cursor: pointer;
   border: 1px solid red;
+  box-shadow: 0 0 10px red;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
   transform: scale(1.1);
 }
+
+.is-crim:hover {
+    border: 1px solid limegreen;
+    box-shadow: 0 0 10px limegreen;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
 .crim {
   margin: 0 auto;
   display: flex;
@@ -83,11 +140,29 @@ body {
 }
 
 .win_lose {
-  position: absolute;
+  display: none;
   bottom: 10px;
   align-items: center;
   width: 100%;
-  display: flex;
   justify-content: center;
   color: white;
+}
+
+
+@keyframes swing {
+  0% {
+    transform: translate(0, 0) rotate(-3deg);
+  }
+  25% {
+    transform: translate(1px, -1px) rotate(3deg);
+  }
+  50% {
+    transform: translate(0, 1px) rotate(-2deg);
+  }
+  75% {
+    transform: translate(-1px, 0) rotate(2deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-3deg);
+  }
 }

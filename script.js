@@ -51,6 +51,7 @@ function startGame () {
         if (i === crimSlot) {
             img.src = imgSelect[randomCrim];
             img.style.zIndex = 200;
+            img.classList.add('is-crim');
             crimAdded = true;
         } else {
             // if not the crim slot, assign a random image
@@ -63,7 +64,7 @@ function startGame () {
 
         // check to see if the randomIndex === randomCrim
 
-        // {problem! --> the target image is always on the top row.}
+        // {problem with this! --> the target image is always on the top row.}
 
         // if (randomIndex === randomCrim) {
         // // If the criminal image is already added, skip this iteration
@@ -98,12 +99,40 @@ function startGame () {
         img.style.left = `${x}px`;
         img.style.top = `${y}px`;
         img.style.transform = `rotate(${rotation}deg)`;
+        img.style.animationDuration = `${2 + Math.random() * 2}s`; // between 2s and 4s
+        img.style.animationDelay = `${Math.random() * 2}s`; // up to 2s delay
+
 
         hitbox.appendChild(img);
     }
     
     // set the crim image after the loop has completed
     setCrim();
+
+
+    // countdown timer
+    let timeLeft = 30; // 30 second timer
+    const timerDisplay = document.querySelector('.time');
+    // const timeDisplay = document.querySelector('.time');
+    timerDisplay.textContent = ` ${timeLeft}s`;
+
+    const alertMessage = document.querySelector('.win_lose');
+
+    const timerInterval = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = ` ${timeLeft}s`;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alertMessage.innerHTML = '';
+            hitbox.innerHTML = '';
+            hitbox.innerHTML = 'Time is up! Game over!';
+            hitbox.style.display = 'flex';
+            hitbox.style.justifyContent = 'center';
+            hitbox.style.alignItems = 'center';
+            hitbox.style.fontSize = '2rem';
+            hitbox.style.color = 'red';
+        }
+    }, 1000);
 }
 
    

@@ -9,16 +9,18 @@
     <title>WANTED</title>
   </head>
   <!-- onload="startGame()" -->
-  <body onload="startGame()">
+  <body>
     <header>
       <h1>WANTED</h1>
     </header>
 
     <section class="section_container">
       <div class="text_container">
-        <h2>Timer: </h2>
-        <h2>Score: </h2>
-       
+        <div style="display: flex; align-items: center; width: 50%;">
+          <h2 class="timer">Time left: </h2>
+          <h2 class="time"> 30 </h2>
+        </div>
+        <h2>Score:</h2>
       </div>
       <div class="bg_container">
         <img src="./images/bg.png" alt="" />
@@ -28,15 +30,41 @@
         <div class="crim">
           <img src="./images/luigi-board.png" alt="" />
         </div>
+        <div class="button_container">
+          <button onClick="startGame()">Start Game</button>
+        </div>
       </section>
-      <section class="selectionArea">
+      <section class="selection_area">
         <div class="hitbox">
-
-          <img id="target" src="./images/luigi.png" alt="" />
+          <div class="instructions">
+            <h2 class="instructions">How to play:</h2>
+            <ul>
+              <li>
+                <p>Click on the " PLAY " button to start the game.</p>
+              </li>
+              <li>
+                <p>
+                  Select the WANTED criminal by clicking on the correct
+                  character...
+                </p>
+              </li>
+              <li class="perps">
+                <img class="perpImg" src="./images/luigi.png" alt="" />
+                <img class="perpImg" src="./images/wario.png" alt="" />
+                <img class="perpImg" src="./images/mario.png" alt="" />
+                <img class="perpImg" src="./images/yoshi.png" alt="" />
+              </li>
+              <li>
+                <p>
+                  you have 30 seconds to find the wanted criminal!
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
         <div class="win_lose">
-         <h2>You Win!</h2>
-       </div>
+          <h2>You Win!</h2>
+        </div>
       </section>
     </section>
   </body>
