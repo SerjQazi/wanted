@@ -8,7 +8,8 @@
 
     <title>WANTED</title>
   </head>
-  <body>
+  <!-- onload="startGame()" -->
+  <body onload="startGame()">
     <header>
       <h1>WANTED</h1>
     </header>
@@ -28,8 +29,11 @@
           <img src="./images/luigi-board.png" alt="" />
         </div>
       </section>
-      <section class="select">
-        <img src="./images/luigi.png" alt="" />
+      <section class="selectionArea">
+        <div class="hitbox">
+
+          <img id="target" src="./images/luigi.png" alt="" />
+        </div>
         <div class="win_lose">
          <h2>You Win!</h2>
        </div>
