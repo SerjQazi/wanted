@@ -12,15 +12,12 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
-  /* border: 10px solid red; */
 }
 
 .bg_container {
   padding: 40px;
   display: flex;
   z-index: -10;
-  /* position: absolute; */
-  /* border: 10px solid red; */
 }
 
 .wanted {
@@ -29,7 +26,6 @@ body {
   position: absolute;
   width: 100%;
   top: 154px;
-  /* border: 5px solid green; */
 }
 
 .selectionArea {
@@ -40,8 +36,6 @@ body {
   width: 87%;
   height: 378px;
   top: 416px;
-
-  /* border: 5px solid blueviolet; */
 }
 
 .hitbox {
@@ -52,10 +46,6 @@ body {
   margin-top: 10px;
   width: 90%;
   height: 90%;
-  /* cursor: pointer; */
-  /* overflow: hidden; */
-  border: 1px solid #ddd;
-  /* z-index: 100; */
 }
 
 .target-image {
@@ -84,7 +74,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 1px solid yellow; */
   width: 74%;
   top: 30px;
   height: fit-content;
@@ -99,7 +88,6 @@ body {
   align-items: center;
   width: 100%;
   display: flex;
-  /* border: 1px solid yellow; */
   justify-content: center;
   color: white;
 }
