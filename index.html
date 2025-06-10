@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <script
+      src="https://kit.fontawesome.com/bc798b24f4.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- defer is the modern method of ensuring that the script loads after the body? -->
     <script src="./script.js" defer></script>
 
@@ -20,7 +27,7 @@
           <h2 class="timer">Time left: </h2>
           <h2 class="time"> 30 </h2>
         </div>
-        <h2>Score:</h2>
+        <h2 class="points">Score:</h2>
       </div>
       <div class="bg_container">
         <img src="./images/bg.png" alt="" />
@@ -31,7 +38,9 @@
           <img src="./images/luigi-board.png" alt="" />
         </div>
         <div class="button_container">
-          <button onClick="startGame()">Start Game</button>
+          <button id="start-btn">Start Game</button>
+          <button id="restart-btn" style="display: none;">Restart Game</button>
+
         </div>
       </section>
       <section class="selection_area">
@@ -67,5 +76,39 @@
         </div>
       </section>
     </section>
+
+     <footer>
+      <p>
+        &copy; 2025 Serj. Built with
+        <i class="fa-brands fa-js" style="color: #000222"></i> JavaScript
+      </p>
+      <p class="mt-2">
+        <a
+          href="https://serjqazi.com/"
+          class="hover:text-white"
+          >serjqazi.com</a
+        >
+        ·
+        <a
+          href="mailto:sirajum.qazi@torontofilmschool.ca"
+          class="hover:text-white"
+          >email</a
+        >
+        ·
+        <a
+          href="https://github.com/SerjQazi"
+          class="hover:text-white"
+          target="_blank"
+          >GitHub</a
+        >
+        ·
+        <a
+          href="https://www.linkedin.com/in/serjqazi/"
+          class="hover:text-white"
+          target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
